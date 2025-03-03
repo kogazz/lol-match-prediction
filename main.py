@@ -73,18 +73,6 @@ plt.ylabel("Valores Reais")
 plt.title("Matriz de Confusão")
 plt.show()
 
-# Gerar Curva ROC
-fpr, tpr, _ = roc_curve(y_test, y_prob)
-roc_auc = auc(fpr, tpr)
-plt.figure(figsize=(6, 4))
-plt.plot(fpr, tpr, color="blue", lw=2, label=f"AUC = {roc_auc:.2f}")
-plt.plot([0, 1], [0, 1], color="grey", linestyle="--")
-plt.xlabel("Falsos Positivos")
-plt.ylabel("Verdadeiros Positivos")
-plt.title("Curva ROC")
-plt.legend()
-plt.show()
-
 # Importância das Variáveis
 importances = model.feature_importances_
 features = X.columns
